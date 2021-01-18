@@ -17,8 +17,8 @@ return F.relu(self.conv2(x))
 ### Binary Classification
 - 현재 딥러닝에서 분류에 대해 가장 흔히 사용되는 손실함수는 Cross Entropy Error (CEE) 이다.  
 
-![image](https://user-images.githubusercontent.com/68810660/104878350-1c09ab80-599f-11eb-9bc5-fa6e96dd5f88.png)
-t는 정답 값, y는 추론 값
+  ![image](https://user-images.githubusercontent.com/68810660/104878350-1c09ab80-599f-11eb-9bc5-fa6e96dd5f88.png)  
+  t는 정답 값, y는 추론 값
 
 - sigmoid: 이진분류에서 가장 많이 사용되는 활성화 함수
 - softmax: 다중분류에서 가장 많이 사용되는 활성화 함수
