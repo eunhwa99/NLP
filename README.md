@@ -45,3 +45,28 @@ return F.relu(self.conv2(x))
 - torch.zeros_like() : 사이즈를 튜플로 입력하지 않고 기존의 텐서로 정의
 - torch.linspace() : 시작점과 끝점을 주어진 갯수만큼 균등하게 나눈 간격점을 행벡터로 출력
 - torch.logspace() : 시작점과 끝점을 주어진 갯수만큼 로그간격으로 나눈 간격점을 행벡터로 출력
+
+## Overfitting
+- gradient descent: 숙명적으로 학습시 overfitting이 발생한다.
+- Overfitting을 최소화하자
+1. 전체 observation에 대해서 특정 비율대로, training set, test set 그리고 validation set(검증세트)로 나누자.
+- validation set: test set에서의 overfitting 방지 역할(우리는 training set에서 모델을 훈련하고, test set을 잘 통과하는 모델을 계속 찾아나가는 데, 이러한 일을 반복하다보면 training과 test set에 overfitting 된 모델이 만들어 질 수 있다.)
+- training set으로 훈련을 하고, validation set으로 검증을 한 후에, test set에 대해서 test 하면 더 정확한 모델 얻을 수 있다.
+- training set(0.8), validation set(0~0.1), test set(0.1~0.2)
+
+2. More Data, 데이터를 많이 모으자.
+3. Less features, 특징을 적게 사용하자.
+4. Regularization
+- Early Stopping: Validation Loss가 더 이상 낮아지지 않을 때까지 학습하는 방법
+- Reducing Network Size: nn의 사이즈를 줄여 학습할 수 있는 양을 줄이는 방법
+- Weight Decay: Weight 파라미터의 크기를 줄이는 방법.
+- Dropout
+- Batch Normalization
+
+### Basic Approach to DNN
+1. NN 모델 생성
+2. 훈련 및 overfitting 확인
+- overfitting 되지 않았으면 더 깊고 크게 모델을 만든다.
+- overfitting 되었다면, drop-out이나 batch-normalization과 같은 regularizaiton을 행한다.
+- overfitting이 되었는지 확인하는 방법?: Validation Loss가 증가하면 Overfitting
+3. 2번부터 반복한다.
