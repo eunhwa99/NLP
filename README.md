@@ -52,7 +52,7 @@ return F.relu(self.conv2(x))
 1. 전체 observation에 대해서 특정 비율대로, training set, test set 그리고 validation set(검증세트)로 나누자.
 - validation set: test set에서의 overfitting 방지 역할(우리는 training set에서 모델을 훈련하고, test set을 잘 통과하는 모델을 계속 찾아나가는 데, 이러한 일을 반복하다보면 training과 test set에 overfitting 된 모델이 만들어 질 수 있다.)
 - training set으로 훈련을 하고, validation set으로 검증을 한 후에, test set에 대해서 test 하면 더 정확한 모델 얻을 수 있다.
-- training set(0.8), validation set(0~0.1), test set(0.1~0.2)
+- training set(0.8), validation set(0,0.1), test set(0.1, 0.2)
 
 2. More Data, 데이터를 많이 모으자.
 3. Less features, 특징을 적게 사용하자.
