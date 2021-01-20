@@ -45,6 +45,19 @@ return F.relu(self.conv2(x))
 - torch.zeros_like() : 사이즈를 튜플로 입력하지 않고 기존의 텐서로 정의
 - torch.linspace() : 시작점과 끝점을 주어진 갯수만큼 균등하게 나눈 간격점을 행벡터로 출력
 - torch.logspace() : 시작점과 끝점을 주어진 갯수만큼 로그간격으로 나눈 간격점을 행벡터로 출력
+- torch.from_numpy(): numpy배열을 torch tesor로 바꾸기
+
+3. Dataset and DataLoader 
+- 코드: DataLoader.py, Load dataset.ipynb
+- epoch = 1 forward and backward pass of ALL training samples
+- batch_size = number of training samples in one forward & backward pass
+- iterations: number of passess, each pass using [batch_size] number of samples
+  ex) 100 samples, batch_size=20 --> 100/20 = 5 iterations for 1 epoch
+  ### Custom DataLoader
+ 우리가 직접 만드는 custom dataloader은 다음과 같은 세 파트로 이루어져 있다.
+ ####  __ init __ (self) : download, read data 등을 하는 파트
+ #### __ getitem __ (self, index) : 인덱스에 해당하는 아이템을 넘겨주는 파트, 어떠한 인덱스 idx를 받았을 때, 그에 상응하는 입출력 데이터 반환
+ #### __ len __ (self) : data size를 넘겨주는 파트, 이 dataset의 총 데이터 개수
 
 ## Overfitting
 - gradient descent: 숙명적으로 학습시 overfitting이 발생한다.
